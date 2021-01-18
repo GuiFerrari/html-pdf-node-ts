@@ -1,10 +1,9 @@
 /// <reference types="node" />
 import { PDFOptions } from 'puppeteer';
 declare type CallBackType = (pdf: any) => void;
-interface OptionsProps {
+interface OptionsProps extends PDFOptions {
     args?: string[];
 }
-declare type PDFProps = OptionsProps & PDFOptions;
 interface FileWithUrl {
     url: string;
     content?: never;
@@ -14,6 +13,6 @@ interface FileWithContent {
     content: string;
 }
 declare type FileType = FileWithUrl | FileWithContent;
-export declare function generatePdf(file: FileType, options?: PDFProps, callback?: CallBackType): Promise<Buffer>;
+export declare function generatePdf(file: FileType, options?: OptionsProps, callback?: CallBackType): Promise<Buffer>;
 export {};
 //# sourceMappingURL=index.d.ts.map

@@ -4,11 +4,9 @@ import hb from 'handlebars';
 
 type CallBackType = (pdf: any) => void;
 
-interface OptionsProps {
+interface OptionsProps extends PDFOptions {
   args?: string[];
 }
-
-type PDFProps = OptionsProps & PDFOptions;
 
 interface FileWithUrl {
   url: string;
@@ -22,7 +20,7 @@ interface FileWithContent {
 
 type FileType = FileWithUrl | FileWithContent;
 
-export async function generatePdf(file: FileType, options?: PDFProps, callback?: CallBackType) {
+export async function generatePdf(file: FileType, options?: OptionsProps, callback?: CallBackType) {
   let args = [
     '--no-sandbox',
     '--disable-setuid-sandbox',
@@ -61,7 +59,7 @@ export async function generatePdf(file: FileType, options?: PDFProps, callback?:
     }).asCallback(callback);
 }
 
-async function generatePdfs(files: FileType[], options?: PDFProps, callback?: CallBackType) {
+async function generatePdfs(files: FileType[], options?: OptionsProps, callback?: CallBackType) {
   let args = [
     '--no-sandbox',
     '--disable-setuid-sandbox',
@@ -106,6 +104,6 @@ async function generatePdfs(files: FileType[], options?: PDFProps, callback?: Ca
 }
 
 module.exports = {
-  generatePdf,
-  generatePdfs
+  generatePdf: generatePdf,
+  generatePdfs: generatePdfs
 }
