@@ -103,5 +103,5 @@ async function generatePdfs(files: FileType[], options?: OptionsProps, callback?
     }).asCallback(callback);
 }
 
-module.exports.generatePdf = generatePdf;
-module.exports.generatePdfs = generatePdfs;
+exports.generatePdf = generatePdf;
+exports.generatePdfs = generatePdfs;
