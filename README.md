@@ -114,10 +114,12 @@ Promise which resolves with array of object which contains file objects with PDF
 
 ***Example:***
 ```js
+import { generatePdf } from "html-pdf-node-ts";
+
 let options = { format: 'A4' };
 let file = [{ url: "https://example.com", name: 'example.pdf' }];
 
-html_to_pdf.generatePdfs(file, options).then(output => {
+generatePdf(file, options).then(output => {
   console.log("PDF Buffer:-", output); // PDF Buffer:- [{url: "https://example.com", name: "example.pdf", buffer: <PDF buffer>}]
 });
 ```

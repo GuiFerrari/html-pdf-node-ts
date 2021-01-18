@@ -59,7 +59,7 @@ export async function generatePdf(file: FileType, options?: OptionsProps, callba
     }).asCallback(callback);
 }
 
-async function generatePdfs(files: FileType[], options?: OptionsProps, callback?: CallBackType) {
+export async function generatePdfs(files: FileType[], options?: OptionsProps, callback?: CallBackType) {
   let args = [
     '--no-sandbox',
     '--disable-setuid-sandbox',
