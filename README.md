@@ -10,7 +10,7 @@ npm install html-pdf-node-ts
 or
 
 ```sh
-yarn add install html-pdf-node-ts
+yarn add html-pdf-node-ts
 ```
 
 ## 🧱 Usage
