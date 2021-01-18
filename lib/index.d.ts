@@ -14,5 +14,6 @@ interface FileWithContent {
 }
 declare type FileType = FileWithUrl | FileWithContent;
 export declare function generatePdf(file: FileType, options?: OptionsProps, callback?: CallBackType): Promise<Buffer>;
+export declare function generatePdfs(files: FileType[], options?: OptionsProps, callback?: CallBackType): Promise<any[]>;
 export {};
 //# sourceMappingURL=index.d.ts.map
