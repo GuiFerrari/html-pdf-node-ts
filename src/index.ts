@@ -20,7 +20,7 @@ interface FileWithContent {
 
 type FileType = FileWithUrl | FileWithContent;
 
-export async function generatePdf(file: FileType, options?: OptionsProps, callback?: CallBackType) {
+async function generatePdf(file: FileType, options?: OptionsProps, callback?: CallBackType) {
   let args = [
     '--no-sandbox',
     '--disable-setuid-sandbox',
@@ -59,7 +59,7 @@ export async function generatePdf(file: FileType, options?: OptionsProps, callba
     }).asCallback(callback);
 }
 
-export async function generatePdfs(files: FileType[], options?: OptionsProps, callback?: CallBackType) {
+async function generatePdfs(files: FileType[], options?: OptionsProps, callback?: CallBackType) {
   let args = [
     '--no-sandbox',
     '--disable-setuid-sandbox',
@@ -103,7 +103,5 @@ export async function generatePdfs(files: FileType[], options?: OptionsProps, ca
     }).asCallback(callback);
 }
 
-module.exports = {
-  generatePdf: generatePdf,
-  generatePdfs: generatePdfs
-}
+module.exports.generatePdf = generatePdf;
+module.exports.generatePdfs = generatePdfs;
