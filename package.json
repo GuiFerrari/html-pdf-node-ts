@@ -1,6 +1,6 @@
 {
   "name": "html-pdf-node-ts",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "lib/index.js",
   "types": "lib",
   "repository": {
@@ -11,7 +11,12 @@
     "build": "tsc -p .",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/index.ts"
   },
+  "author": "Guilherme Ferrari",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GuiFerrari/html-pdf-node-ts/issues"
+  },
+  "homepage": "https://github.com/GuiFerrari/html-pdf-node-ts",
   "devDependencies": {
     "ts-node-dev": "^1.1.1",
     "typescript": "^4.1.3"
