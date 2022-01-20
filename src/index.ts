@@ -21,7 +21,7 @@ interface FileWithContent {
 
 type FileType = FileWithUrl | FileWithContent;
 
-async function generatePdf(
+export async function generatePdf(
   file: FileType,
   options?: OptionsProps,
   callback?: CallBackType
@@ -68,7 +68,7 @@ async function generatePdf(
     .asCallback(callback);
 }
 
-async function generatePdfs(
+export async function generatePdfs(
   files: FileType[],
   options?: OptionsProps,
   callback?: CallBackType
@@ -118,6 +118,3 @@ async function generatePdfs(
     })
     .asCallback(callback);
 }
-
-module.exports.generatePdf = generatePdf;
-module.exports.generatePdfs = generatePdfs;
