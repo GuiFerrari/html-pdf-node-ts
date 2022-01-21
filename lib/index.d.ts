@@ -1,8 +1,9 @@
 /// <reference types="node" />
-import { PDFOptions } from 'puppeteer';
+import puppeteer, { PDFOptions } from "puppeteer";
 declare type CallBackType = (pdf: any) => void;
 interface OptionsProps extends PDFOptions {
     args?: string[];
+    browser?: puppeteer.Browser;
 }
 interface FileWithUrl {
     url: string;
